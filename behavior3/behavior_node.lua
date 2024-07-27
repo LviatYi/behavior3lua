@@ -22,7 +22,12 @@ function mt:init(node_data, tree)
     self.id = node_data.id
     self.info = sformat('node %s.%s %s', tree.name, self.id, self.name)
 
-    self.data = node_data
+    self.data = {}
+    for k, v in pairs(node_data) do
+        if k ~= "input" then
+            self.data[k] = v
+        end
+    end
     self.data.input = self.data.input or {}
     self.data.output = self.data.output or {}
     self.args = self.data.args or {}
