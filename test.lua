@@ -120,7 +120,7 @@ end
 test_repeat_until_fail()
 
 
-local function test_repeat_until_fail()
+local function test_parallel()
     print("=================== test parallel ========================")
     local btree = behavior_tree.new("parallel", load_tree("workspace/trees/test-parallel.json"), {
         ctx   = ctx,
@@ -131,4 +131,4 @@ local function test_repeat_until_fail()
     end
 end
 
-test_repeat_until_fail()
+test_parallel()
